@@ -1,0 +1,8 @@
+body {
+    background: linear-gradient( 90deg, hsl(23,76%, 45%), hsl(256,89%,56%) );
+
+}
+#theNav {
+   background-color:darkblue !important;
+   box-shadow: 0px 0px 20px 20px darkblue;
+}
