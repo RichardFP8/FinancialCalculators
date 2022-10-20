@@ -6,3 +6,9 @@ body {
    background-color:darkblue !important;
    box-shadow: 0px 0px 20px 20px darkblue;
 }
+#description {
+    background-color: rgba(0, 0 ,0, 0.4);
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* create a media to increase the font size after medium breakpoint*/

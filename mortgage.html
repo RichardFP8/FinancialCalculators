@@ -1,53 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/custom.css" />
-        <link rel="" href="./scripts/plain.js" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-       
-        <title>Main</title>
-    </head>
 
-    <body>
-        <header>
-            <!--using the <nav> to include the navbar look; it'll display the color across the entire width but all content remains fixed in the center
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="" href="./scripts/plain.js" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Mortgage</title>
+</head>
+
+<body>
+    <header>
+        <!--using the <nav> to include the navbar look; it'll display the color across the entire width but all content remains fixed in the center
                 the button would appear below the md breakpoit where above its content will display; what tells it to hide above that? the aria-expanded?-->
-            <nav class="navbar navbar-expand-md bg-dark" id="theNav">
-                <div class="container">
-                    <button class="navbar-toggler bg-info m-2" type="button" data-bs-toggle="collapse" data-bs-target="#listNav" aria-controls="listNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon p-1 text-light">Hi</span>
-                      </button>
+        <nav class="navbar navbar-expand-md bg-dark" id="theNav">
+            <div class="container">
+                <button class="navbar-toggler bg-info m-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#listNav" aria-controls="listNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon p-1 text-light">Hi</span>
+                </button>
 
-                    <!--the collapse component has the navbar component inside; the button triggers the collapse and reveals all this-->
-                    <div class="collapse navbar-collapse mt-2" id="listNav">
-                        <ul class="navbar-nav text-light">
-                            <li class="nav-item "><a class="nav-link active text-light" href="home.html">Here</a> </li>
-                            <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
-                            <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
-                            <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
-                        </ul>
-                    </div>
+                <!--the collapse component has the navbar component inside; the button triggers the collapse and reveals all this-->
+                <div class="collapse navbar-collapse mt-2" id="listNav">
+                    <ul class="navbar-nav text-light">
+                        <li class="nav-item "><a class="nav-link active text-light" href="home.html">Here</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
+                        <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
 
-        </header>
+    </header>
 
-        <main class="container mt-5 text-light">
-            <h1 class="display-2 text-end">Main</h1>
-        </main>
+    <main class="container mt-5 text-light">
+        <!--playing with the headers-->
+
+        <h1 class="display-2 text-end">Did you curse yourself?</h1>
+        <h2 class="display-5 text-end">Let's find out</h2>
+        <h2 class="text-center">Mortagage Calculator</h2>
+            <!--give description of the calculator-->
+            <div class="row mt-3 gx-5">
+                <!--left main column-->
+                <div class="col-md-4 mt-2">
+                    <div id="description">
+                        <p>You got a mortagage,<sub>Why?</sub>. <br>You also got money.<sup>slide a few to my pockets</sup> 
+                            <br>You want to know how much you'll pay.<sub>bank dudes didn't tell you already?</sub>
+                            <strong><br>Fear not</strong> I'll need you to cooperate here with me.  
+                        </p>
+                    </div>
+
+                </div>
+
+                <!--where the form will be; right main column-->
+                <div class="col mt-2">
+                    <h2>Calculator</h2>
+                    <!--start of form-->
+                    <form action="./scripts/plain.js">
+                        <!--each element would have their own column so it can look more responsive. Does this work w/ a table too?-->
+                        <!--each input will have it's own row because why not?-->
+                        <div class="row align-items-center me-0 mb-3">
+                            <div class="col-3"> <label for="principal" class="col-form-label">Principal Amount</label> </div>
+                            <div class="col"> <input type="text" id="principal" name="pricinpalAmount" class="form-control"> </div>
+                            <div class="col-2"> <span class="form-text">Still not broke?</span> </div>
+                        
+                        </div>
+                        <div class="row align-items-center me-0 mb-3">
+                            <div class="col-3"> <label for="interestRate" class="col-form-label">Interest Rate</label> </div>
+                            <div class="col"> <input type="text" id="interestRate" name="interestRate" class="form-control"> </div>
+                            <div class="col-2"> <span class="form-text">In percentage</span> </div>
+                        
+                        </div>
+                        <div class="row align-items-center me-0 mb-3">
+                            <div class="col-3"> <label for="loanLength" class="col-form-label">Loan Length</label> </div>
+                            <div class="col"> <input type="text" id="loanLength" name="loanLength" class="form-control"> </div>
+                            <div class="col-2"> <span class="form-text"> In years</span> </div>
+                        
+                        </div>
+                        <button type="button" class="btn btn-warning ">Tell me</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--form to get input and return-->
 
 
-        <footer class="bg-primary">
+    </main>
+
+
+    <footer class="bg-primary">
         <!--add footer-->
-        </footer>
+    </footer>
 
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
-    </body>
-    
+</body>
+
 </html>
