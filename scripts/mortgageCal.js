@@ -1,25 +1,36 @@
+//mortgage
 "use strict";
 
-//collect inputs
-var principal = 80000;
-var interest = parseFloat(5);                           //express as percenage and annually rate
-interest = ((interest / 100) / 12).toFixed(5);           //converted to decimal interest rate yearly is converted to monthly
+window.onload = init;
+//formula from Quora resource:
 
-var length = 10;        // express as years, convert to months
-length *= 12;           //converted to # of months
+function init(){
+    const calculateBtn = document.getElementById("calculate");
+    calculateBtn.onclick = computeInterest;
+}
 
-//compute in three steps for me to understand and track potential errors
- console.log(interest);
-console.log(length);
-var first =  (Math.pow( 1 + interest , length ) ) .toFixed(5) ;
-var second = (1 + interest) ** length;
-console.log(first);
-console.log(second.toFixed(5));
+// M = p * [ r / ( 1  - ( 1 + r ) ^ -n ) ]
 
+function computeInterest(){
+    const getPrincipal = Number(document.getElementById("principal").value);
+    let getRate = Number(document.getElementById("interestRate").value);
+    let getLength = Number(document.getElementById("loanLength").value);
+    const returnMonth = document.getElementById("answerMonthly");
+    const returnInterest = document.getElementById("answerInterest");
+    const returnTotal = document.getElementById("answerAll");
 
-// var second = Math.pow((1 + interest), length - 1);
-// var monthly = principal * (first/second);
+    //compute monthly
+    getRate = ( getRate / 100 ) / 12;               //convert to monthly
+    getLength *= 12;                                //convert to months
+    let first = 1 - Math.pow( (1 + getRate) , -getLength );
+    let monthly = getPrincipal * ( getRate / first );
+    returnMonth.value = `$${monthly.toFixed(2)}`;
 
-// console.log(first);
-// console.log(second);
-// console.log(monthly);
+    //compute total
+    let totalPrice = monthly * getLength;
+    returnTotal.value = `$${totalPrice.toFixed(2)}`;
+    
+    //compute interest
+    let interestOnly = totalPrice - getPrincipal;
+    returnInterest.value = `$${interestOnly.toFixed(2)}`
+}
