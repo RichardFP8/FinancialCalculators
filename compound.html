@@ -1,53 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/custom.css" />
-        <link rel="" href="./scripts/plain.js" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-       
-        <title>Compound</title>
-    </head>
 
-    <body>
-        <header>
-            <!--using the <nav> to include the navbar look; it'll display the color across the entire width but all content remains fixed in the center
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Compound</title>
+</head>
+
+<body>
+    <header>
+        <!--using the <nav> to include the navbar look; it'll display the color across the entire width but all content remains fixed in the center
                 the button would appear below the md breakpoit where above its content will display; what tells it to hide above that? the aria-expanded?-->
-            <nav class="navbar navbar-expand-md bg-dark" id="theNav">
-                <div class="container">
-                    <button class="navbar-toggler bg-info m-2" type="button" data-bs-toggle="collapse" data-bs-target="#listNav" aria-controls="listNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon p-1 text-light">Hi</span>
-                      </button>
+        <nav class="navbar navbar-expand-md bg-dark" id="theNav">
+            <div class="container">
+                <button class="navbar-toggler bg-info m-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#listNav" aria-controls="listNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon p-1 text-light">Hi</span>
+                </button>
 
-                    <!--the collapse component has the navbar component inside; the button triggers the collapse and reveals all this-->
-                    <div class="collapse navbar-collapse mt-2" id="listNav">
-                        <ul class="navbar-nav text-light">
-                            <li class="nav-item "><a class="nav-link active text-light" href="home.html">Here</a> </li>
-                            <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
-                            <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
-                            <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
-                        </ul>
+                <!--the collapse component has the navbar component inside; the button triggers the collapse and reveals all this-->
+                <div class="collapse navbar-collapse mt-2" id="listNav">
+                    <ul class="navbar-nav text-light">
+                        <li class="nav-item "><a class="nav-link active text-light" href="home.html">Here</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
+                        <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main class="container mt-5 text-light">
+        <h1 class="display-2 text-end">Money Up</h1>
+        <div class="row">
+            <div class="col-sm-7  col-md-7 ">
+                <h3 class="text-center my-3">The calculator</h3>
+                <form>
+                    <!-- the first row of the form; getting the deposit-->
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <label for="deposit" class="form-label fw-bold">Deposit: </label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="deposit" />
+                        </div>
+                    </div>
+                    <!--the interest rate row-->
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <label for="interest" class="form-label fw-bold">Interest Rate: </label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="interest" />
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="form-text text-light fw-bold">Annually</span>
+                        </div>
+                    </div>
+                    <!--the # of year rpw-->
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <label for="years" class="form-label fw-bold"># of years</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="deposit" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-info btn-outline-light" id="compute">Find out!</button>
+                        </div>
+                        <div class="col-6">
+                            <p id="message"></p>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-3">
+                    <div class="col-5">
+                        <label for="futureValue" class="form-label">Future value:</label>
+                        <input type="text" class="form-control " id="futureValue" readonly />
                     </div>
                 </div>
-            </nav>
+                <div class="row mt-3">
+                    <div class="col-5">
+                        <label for="interest" class="form-label">Total Interest:</label>
+                        <input type="text" class="form-control " id="totalInterest" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h3>How is my calculator working for you</h3>
+                <p>Assuming DAILY compound interest</p>
+            </div>
+        </div>
+    </main>
 
 
-        </header>
-
-        <main class="container mt-5 text-light">
-            <h1 class="display-2 text-end">Money Up</h1>
-        </main>
-
-
-        <footer class="bg-primary">
+    <footer class="bg-primary">
         <!--add footer-->
-        </footer>
+    </footer>
 
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
-    </body>
-    
+    <script src="./scripts/compoundCal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+
 </html>
