@@ -10,27 +10,38 @@ function init(){
     computeBtn.onclick = computeCD;
 }
 
-//find, access, store the inputs -> compute adnd return; include if condition for NaN
+//find, access, store the inputs -> compute and return; include if condition for NaN
 function computeCD(){
     //get the 3 inputs
     const getDeposit = Number( document.getElementById("deposit").value);
-    const getInterest = Number( document.getElementById("interest").value);
+    let getInterest = Number( document.getElementById("interest").value);
     const getTime = Number( document.getElementById("years").value);
     const returnValue = document.getElementById("futureValue");
+    const returnInterest = document.getElementById("totalInterest"); 
+    const message = document.getElementById("message");
     //include if condition
     if(isNaN(getDeposit) || isNaN(getInterest) || isNaN(getTime)){
-        const message = document.getElementById("message");
+       
         message.innerHTML = "Only numbers";
         return;
     }
+    else{
     /*compute the future value: 
-    // a =  p*( (1 + (r / n))^(t * n) ) 
+    // a =  p * ( (1 + (r / n))^(t * n) ) 
     where n represents the times its compounded, which here we assume daily  */
-    let firstStep = Math.pow( 1 + ( getRate / 365 ), (getTime * 365)) ;
+    getInterest /= 100; //convert to decimal form
+    let convertToAPY = (((Math.pow( 1 + (getInterest / 365) , 365 ) ) - 1) * 100).toFixed(2) ; //conver the interest rate which is APR to APY percentage
+    convertToAPY /= 100;
+    let firstStep = Math.pow( 1 + ( convertToAPY / 365 ), (getTime * 365)) ;
     let finalStep = getDeposit * firstStep;
-    returnValue.value = `$${finalStep}`;
     //compute the interest
+    let justInterest = finalStep - getDeposit;
+    //return value
+    returnValue.value = `$${finalStep.toFixed(2)}`;
+    returnInterest.value = `$${justInterest.toFixed(2)}`;
+    message.innerHTML = "";
 
-    //return values
-
+}
+    
+   
 }
