@@ -7,6 +7,8 @@ window.onload = init;
 function init(){
     const calculateBtn = document.getElementById("calculate");
     calculateBtn.onclick = computeInterest;
+    const resetBtn = document.getElementById("reset");
+    resetBtn.onclick = resetAll;
 }
 
 // M = p * [ r / ( 1  - ( 1 + r ) ^ -n ) ]
@@ -33,4 +35,21 @@ function computeInterest(){
     //compute interest
     let interestOnly = totalPrice - getPrincipal;
     returnInterest.value = `$${interestOnly.toFixed(2)}`
+}
+
+//reset all values
+function resetAll(){
+    const resetPrincipal = document.getElementById("principal");
+    const resetRate = document.getElementById("interestRate");
+    const resetLength =  document.getElementById("loanLength");
+    const resetMonth = document.getElementById("answerMonthly");
+    const resetInterest = document.getElementById("answerInterest"); 
+    const resetTotal = document.getElementById("answerAll"); 
+
+    resetPrincipal.value = "";
+    resetRate.value = "";
+    resetLength.value = "";
+    resetMonth.value = "";
+    resetInterest.value = "";
+    resetTotal.value = "";
 }

@@ -29,6 +29,8 @@
                         <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
                         <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
                         <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="annuity.html">Challenge</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="temperature.html">Temperature conversion</a> </li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +66,7 @@
                             <span class="form-text text-light fw-bold">Annually</span>
                         </div>
                     </div>
-                    <!--the # of year rpw-->
+                    <!--the # of year row-->
                     <div class="row mb-3">
                         <div class="col-sm-3">
                             <label for="years" class="form-label fw-bold"># of years</label>
@@ -78,7 +80,7 @@
                             <button type="button" class="btn btn-info btn-outline-light" id="compute">Find out!</button>
                         </div>
                         <div class="col-6">
-                            <p id="message"></p>
+                        <p id="message"></p>
                         </div>
                     </div>
                 </form>
@@ -94,16 +96,14 @@
                         <input type="text" class="form-control " id="totalInterest" />
                     </div>
                 </div>
-                <!-- <div class="row mt-3">
-                    <div class="col-5">
-                        <label for="testing" class="form-label">Testing attention please:</label>
-                        <input type="text" class="form-control " id="testing" />
-                    </div>
-                </div> -->
+            
             </div>
             <div class="col-md-5">
                 <h3>How is my calculator working for you</h3>
                 <p>Assuming DAILY compound interest</p>
+            </div>
+            <div class="col-md-4 mt-5">
+                <button type="button" class="btn btn-dark btn-outline-light" id="reset">RESET</button>
             </div>
         </div>
     </main>

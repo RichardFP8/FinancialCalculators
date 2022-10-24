@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Annuity</title>
+</head>
+
+<body>
+    <header>
+        <!--using the <nav> to include the navbar look; it'll display the color across the entire width but all content remains fixed in the center
+                the button would appear below the md breakpoit where above its content will display; what tells it to hide above that? the aria-expanded?-->
+        <nav class="navbar navbar-expand-md bg-dark" id="theNav">
+            <div class="container">
+                <button class="navbar-toggler bg-info m-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#listNav" aria-controls="listNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon p-1 text-light">Hi</span>
+                </button>
+
+                <!--the collapse component has the navbar component inside; the button triggers the collapse and reveals all this-->
+                <div class="collapse navbar-collapse mt-2" id="listNav">
+                    <ul class="navbar-nav text-light">
+                        <li class="nav-item "><a class="nav-link  text-light" href="home.html">Here</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="mortgage.html">Mortgage</a> </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="compound.html">Compound</a> </li>
+                        <li class="nav-item"><a class="nav-link disabled" href="#">Artificial Intelligence</a></li>
+                        <li class="nav-item"><a class="nav-link active text-light " href="annuity.html">Annuity</a>
+                            <li class="nav-item"><a class="nav-link text-light" href="temperature.html">Temperature conversion</a> </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main class="container mt-5 text-light">
+        <h1 class="display-2 text-end">Present Annuity</h1>
+
+        <!--main row, seperate two body of texts in the first row; second row is where the calculator would be with the answers to the side(1/2 and 1/2)-->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <p class="text-end">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus quos laudantium
+                    ea?</p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptas aliquam
+                    aliassint?</p>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <h4>Hand me the inputs</h4>
+                <form>
+                    <!--first input-->
+                    <div class="row my-2">
+                        <div class="col-4">
+                            <label class="form-label fw-bold" for="monthlyPay">Monthly Payout: </label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" id="monthlyPay" />
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-4">
+                            <label class="form-label fw-bold" for="interestRate">Expected interest rate:</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" id="interestRate" />
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-4">
+                            <label for="years" class="form-label fw-bold">Years: </label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" id="years" type="text" />
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-success btn-light mt-4" id="compute">Hand me the
+                        outputs </button>
+                    <p id="errorMessage"></p>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="row mx-auto">
+                    <label class="form-label" for="answer">Present Annuity: </label>
+                    <input id="answer" class="form-control w-50 " type="text" readonly />
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3 ms-auto">
+                    <button type="button" id="reset" class="btn btn-light btn-outline-dark">RESET</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="bg-primary">
+
+    </footer>
+    <script src="./scripts/annuity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

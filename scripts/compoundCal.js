@@ -8,6 +8,8 @@ window.onload = init;
 function init(){
     const computeBtn = document.getElementById("compute");
     computeBtn.onclick = computeCD;
+    const resetBtn = document.getElementById("reset");
+    resetBtn.onclick = resetAll;
 }
 
 //find, access, store the inputs -> compute and return; include if condition for NaN
@@ -19,9 +21,9 @@ function computeCD(){
     const returnValue = document.getElementById("futureValue");
     const returnInterest = document.getElementById("totalInterest"); 
     const message = document.getElementById("message");
+    
     //include if condition
-    if(isNaN(getDeposit) || isNaN(getInterest) || isNaN(getTime)){
-       
+    if(isNaN(getDeposit) || isNaN(getInterest) || isNaN(getTime)){ 
         message.innerHTML = "Only numbers";
         return;
     }
@@ -43,5 +45,19 @@ function computeCD(){
 
 }
     
+   
+}
+//reset values when clicked
+function resetAll(){
+    const resetDeposit = document.getElementById("deposit");
+    const resetInterest = document.getElementById("interest");
+    const resetTime =  document.getElementById("years");
+    const resetValue = document.getElementById("futureValue");
+    const resetOnlyInterest = document.getElementById("totalInterest"); 
+    resetDeposit.value = "";
+    resetInterest.value = "";
+    resetTime.value = "";
+    resetValue.value = "";
+    resetOnlyInterest.value = "";
    
 }
