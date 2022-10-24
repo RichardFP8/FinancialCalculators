@@ -28,9 +28,9 @@ function calculateAnnuity() {
     else { //calculate  p * [ (1 - ( 1 + rate )^-n ) /rate]
         getRate = (getRate / 100) / 12;
         getYears *= 12;
-        const firstStep = Math.pow( 1 + getRate, -getYears) - 1;
-        const present = getMonthly * ( firstStep / getRate );
-        
+        const firstStep = Math.pow(1 + getRate, -getYears) - 1;
+        const present = getMonthly * (firstStep / getRate);
+
         answer.value = `$${-present.toFixed(2)}`;
         message.innerHTML = "";
     }

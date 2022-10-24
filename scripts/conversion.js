@@ -28,7 +28,7 @@ function convertF_toC() {
         message.innerHTML = "Not a number";
         return;
     }
-    else{
+    else {
         let toCelsius = (5 / 9) * (getFahren - 32);
         answer.value = toCelsius.toFixed(2);
         message.innerHTML = "";
@@ -45,21 +45,21 @@ function convertC_toF() {
         message.innerHTML = "Not a number";
         return;
     }
-    else{
+    else {
         let toFahrenheit = (5 / 9) * (getCelsius - 32);
         answer.value = toFahrenheit.toFixed(2);
         message.innerHTML = "";
     }
 }
 
-function resetFtoC(){
+function resetFtoC() {
     const resetFahren = document.getElementById("fahren");
     const resetAnswer = document.getElementById("toCelsius");
     resetFahren.value = "";
     resetAnswer.value = "";
 }
 
-function resetCtoF(){
+function resetCtoF() {
     const resetCelsius = document.getElementById("celsius");
     const resetAnswer = document.getElementById("toFahrenheit");
     resetCelsius.value = "";

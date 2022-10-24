@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/custom.css" />
-   
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -45,32 +45,34 @@
         <h1 class="display-2 text-end">Temperature conversion because why not?</h1>
 
         <div class="container-fluid my-5">
-         <div class="row">
-            <div class="col-md-6 my-4">
-                <h3>Convert Celsius to Fahrenheit</h2>
-                    <form>
-                        <label class="form-label mt-3 "> Celsius : <input type="text" id="celsius" />&deg;C </label>
-                        <br>
-                        <input type="button" id="convertC" value="Convert" class="form-control w-25 my-4" />
-                        <p>In Fahrenheit: <input type="text" id="toFahrenheit" readonly />&deg;F</p>
-                        <p id="message"></p>
-                        <input type="button" id="resetC" value="RESET" class="btn btn-outline-info" />
-                    </form>
-            </div>
-       
+            <div class="row">
+                <div class="col-md-6 my-4">
+                    <h3>Convert Celsius to Fahrenheit</h2>
+                        <form>
+                            <label class="form-label mt-3 "> Celsius : <input type="text" id="celsius" />&deg;C </label>
+                            <br>
+                            <input type="button" id="convertC" value="Convert" class="form-control w-25 my-4" />
+                            <p>In Fahrenheit: <input type="text" id="toFahrenheit" readonly />&deg;F</p>
+                            <p id="message"></p>
+                            <input type="button" id="resetC" value="RESET" class="btn btn-outline-info" />
+                        </form>
+                </div>
+
                 <div class="col-md-6 mt-4">
                     <form>
                         <h3 class="mb-4">Convert Fahrenheit to Celsius</h3>
                         <div class="row">
                             <div class="col col-lg-5 gy-3">
-                                <label class="form-label me-5 ">Fahrenheit: <input type="text" id="fahren" />&deg;F </label>
+                                <label class="form-label me-5 ">Fahrenheit: <input type="text" id="fahren" />&deg;F
+                                </label>
                             </div>
                             <div class="col col-lg-2 gy-4 mx-4 ">
                                 <input type="button" class="btn btn-info" id="convertF" value="Convert" />
                             </div>
-        
+
                             <div class="col col-lg-5 gy-3">
-                                <p class="mt-2 mb-5"> In Celsius: <input type="text" id="toCelsius" readonly />&deg;C</p>
+                                <p class="mt-2 mb-5"> In Celsius: <input type="text" id="toCelsius" readonly />&deg;C
+                                </p>
                                 <p id="message2"></p>
                             </div>
                             <div class="col-md-12 col-12  mx-lg-auto gy-3 mb-5">
@@ -88,7 +90,7 @@
     <footer class="bg-primary">
         <!--add footer-->
     </footer>
-   <script src="./scripts/conversion.js"></script>
+    <script src="./scripts/conversion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
